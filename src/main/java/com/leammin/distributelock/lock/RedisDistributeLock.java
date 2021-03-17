@@ -81,8 +81,8 @@ public class RedisDistributeLock implements DistributeLock {
 
     @Override
     public void unlock() {
-        release();
         removeTask();
+        release();
         THREAD_ID.remove();
     }
 
